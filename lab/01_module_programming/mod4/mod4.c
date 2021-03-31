@@ -50,7 +50,7 @@ static struct file_operations myops = {
 };
 
 static int __init mod4_init(void) {	
-	base = proc_mkdir("proc4_folder_2", NULL);
+	base = proc_mkdir("proc4_folder", NULL);
 	entry = proc_create("mod4_proc", 0666, base, &myops);
 	return 0;
 }
