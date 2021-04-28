@@ -8,4 +8,4 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 
 #### Notes
 
-* Lec 5. Process Management: Scheduling
+* Lec 5. [Process Management: Scheduling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_05.md)

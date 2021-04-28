@@ -1,5 +1,6 @@
 # LK Note 05
 > SJTU-CS353 Linux Kernel
+
 > Refer to the slides of Prof. Quan Chen, Dept. of CSE, SJTU.
 ## Lec 5. Process Management: Scheduling
 ### （1）调度策略
@@ -16,12 +17,15 @@
     * `SCHED_FIFO`：先进先出（实时）
     * `SCHED_RR`：Round-Robin（时间片轮转）（实时）
     * `SCHED_NORMAL`：传统的时分共享进程（交互式 & 批处理）
+    
 * 静态优先级（static priority）：100-139（值越小，优先级越高，时间片越长）
+  
     * 可由 `nice()`，`setpriority()` 系统调用改变
+    
 * 基本时间片（base time quantum）：一个进程消耗完先前的时间片后，调度器分配给该进程的时间片量；以下公式单位为 milliseconds
-$$
-base\ time\ quantum=\begin{cases}(140-static\ priority)\times 20 \quad & if\ static\ priority\in[100,119)\\(140-static\ priority)\times 5\quad& if \ static\ priority \in [120,139]\end{cases}
-$$
+
+![](imgs/5/5-3.png)
+
 * 动态优先级 = 静态优先级 - bonus + 5，但需要保证介于 [100,139] 之间，与 100 取 max，与 139 取 min
     * bonus：0-10，＜5 降低优先级（值增大），＞5 提升优先级（值减小）
     * bonus 由进程平均睡眠时间（average sleep time）决定；平均睡眠时间越小，进程切换太频繁，适当降低优先级，即 bonus 较小（＜ 5）；平均睡眠时间越大，进程容易发生饥饿，适当提高优先级，即 bonus 较大（> 5）
@@ -57,9 +61,9 @@ $$
 	* `vruntime` 表示进程虚拟的运行时间，每个任务具有相同的 `vruntime`
 	* `nice_0_weight` 表示 `nice=0` 的权重值
 	* 该进程权重值越大，实际运行时间越长，保证公平调度
-$$
-\frac{vruntime}{delta\_exec}=\frac{nice\_0\_weight}{weight}
-$$
+
+![](imgs/5/5-4.png)
+
 * CFS 调度器的实现
     * 选择红黑树记录任务的运行时间（红黑树：平衡二叉搜索树，大多操作复杂度 `O(logn）`
     * 选择红黑树最左边节点（最少时间）的进程运行
