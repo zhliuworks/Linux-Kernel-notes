@@ -24,7 +24,7 @@
     
 * 基本时间片（base time quantum）：一个进程消耗完先前的时间片后，调度器分配给该进程的时间片量；以下公式单位为 milliseconds
 
-![](imgs/5/5-3.png)
+<p align="center"><img src="imgs/5/1.png"/></p>
 
 * 动态优先级 = 静态优先级 - bonus + 5，但需要保证介于 [100,139] 之间，与 100 取 max，与 139 取 min
     * bonus：0-10，＜5 降低优先级（值增大），＞5 提升优先级（值减小）
@@ -54,7 +54,7 @@
     * `expired`：指向过期进程列表
     * `arrays`：两组进程（`arrays[0]`，`arrays[1]` 表示活动/过期进程）
     * 所有进程从 `active` 变成 `expired` 之后，可以改变指针指向，`active->arrays[0]` 变为 `active->arrays[1]`
-![](imgs/5/5-1.png)
+<p align="center"><img src="imgs/5/2.png"/></p>
 
 ### （4）完全公平调度器（CFS）
 * 虚拟运行时间 `vruntime`
@@ -62,13 +62,14 @@
 	* `nice_0_weight` 表示 `nice=0` 的权重值
 	* 该进程权重值越大，实际运行时间越长，保证公平调度
 
-![](imgs/5/5-4.png)
+<p align="center"><img src="imgs/5/3.png"/></p>
 
 * CFS 调度器的实现
     * 选择红黑树记录任务的运行时间（红黑树：平衡二叉搜索树，大多操作复杂度 `O(logn）`
     * 选择红黑树最左边节点（最少时间）的进程运行
     * 选择的进程从树中移除，更新执行时间，重新插入红黑树中
-![](imgs/5/5-2.png)
+<p align="center"><img src="imgs/5/4.png"/></p>
+
 * 进程调度时机
     * 阻塞操作：互斥量（mutex）、信号量（semaphore）、等待队列（wait queue）
     * 在中断返回前和系统调用返回用户空间时，检查 `TIF_NEED_RESCHED` 标志位以判断是否需要调度
@@ -77,4 +78,4 @@
     * 调度器的职责选择下一个进程运行，而进程切换负责具体落实该进程的执行
     * 切换的本质：
         * 保存上一个进程的上下文
-        * 装载下一个进程的上下文到 CPU
+		* 装载下一个进程的上下文到 CPU
