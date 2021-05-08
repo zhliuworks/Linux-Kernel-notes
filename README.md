@@ -10,3 +10,4 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 
 * Lec 4. [Process Management](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_04.md)
 * Lec 5. [Process Management: Scheduling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_05.md)
+* Lec 6. [Interrupt Handling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_06.md)
