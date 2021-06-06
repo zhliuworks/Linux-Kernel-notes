@@ -7,6 +7,7 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 - [x] 02:  [Process Management](https://github.com/zhliuworks/Linux-Kernel-notes/tree/master/lab/02_process_management)
 - [x] 03:  [Memory Management](https://github.com/zhliuworks/Linux-Kernel-notes/tree/master/lab/03_memory_management)
 - [x] 04:  [File System](https://github.com/zhliuworks/Linux-Kernel-notes/tree/master/lab/04_file_system)
+- [x] 05:  [Syscall Hijack](https://github.com/zhliuworks/Linux-Kernel-notes/tree/master/lab/05_syscall_hijack)
 
 #### Notes
 
