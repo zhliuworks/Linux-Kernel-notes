@@ -11,13 +11,21 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 
 #### Notes
 
-- [ ] Lec 1. Introduction to Linux Kernel
-- [ ] Lec 2. Linux Booting
-- [ ] Lec 3. Module Programming and /proc Filesystem
-- [x] Lec 4. [Process Management](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_04.md)
-- [x] Lec 5. [Process Management: Scheduling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_05.md)
-- [x] Lec 6. [Interrupt Handling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_06.md)
-- [ ] Lec 7. Kernel Synchronization
-- [ ] Lec 8. Symmetric Multiprocessing
-- [ ] Lec 9. Memory Management: Addressing
-- [ ] Process Management on Multi-processor System: Scheduling Domain
+| Lecture | Content                                                      |
+| ------- | ------------------------------------------------------------ |
+| Lec. 1  | Introduction to Linux Kernel                                 |
+| Lec. 2  | Linux Booting                                                |
+| Lec. 3  | Module Programming and `/proc` Filesystem                    |
+| Lec. 4  | [Process Management](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_04.md) |
+| Lec. 5  | [Process Management: Scheduling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_05.md) |
+| *       | Process Management on Multi-processor System: Scheduling Domain |
+| Lec. 6  | [Interrupt Handling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_06.md) |
+| Lec. 7  | Kernel Synchronization                                       |
+| Lec. 8  | Symmetric Multiprocessing                                    |
+| Lec. 9  | Memory Management: Addressing                                |
+| Lec. 10 | Memory Management: Methods                                   |
+| Lec. 11 | [Virtual File System](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_11.md) |
+| Lec. 12 | Linux File System Implementations                            |
+| *       | Power Management: From Linux Kernel to Android               |
+| *       | New Directions of Operating System Kernel                    |
+
