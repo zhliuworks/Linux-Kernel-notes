@@ -22,7 +22,7 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 | Lec. 6  | [Interrupt Handling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_06.md) |
 | Lec. 7  | Kernel Synchronization                                       |
 | Lec. 8  | Symmetric Multiprocessing                                    |
-| Lec. 9  | Memory Management: Addressing                                |
+| Lec. 9  | [Memory Management: Addressing](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_09.md) |
 | Lec. 10 | Memory Management: Methods                                   |
 | Lec. 11 | [Virtual File System](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_11.md) |
 | Lec. 12 | Linux File System Implementations                            |
