@@ -25,7 +25,7 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 | Lec. 9  | [Memory Management: Addressing](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_09.md) |
 | Lec. 10 | [Memory Management: Methods](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_10.md) |
 | Lec. 11 | [Virtual File System](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_11.md) |
-| Lec. 12 | Linux File System Implementations                            |
+| Lec. 12 | [Linux File System Implementations](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_12.md) |
 | *       | Power Management: From Linux Kernel to Android               |
 | *       | New Directions of Operating System Kernel                    |
 
