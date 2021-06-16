@@ -20,7 +20,7 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 | Lec. 5  | [Process Management: Scheduling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_05.md) |
 | *       | Process Management on Multi-processor System: Scheduling Domain |
 | Lec. 6  | [Interrupt Handling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_06.md) |
-| Lec. 7  | Kernel Synchronization                                       |
+| Lec. 7  | [Kernel Synchronization](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_07.md) |
 | Lec. 8  | Symmetric Multiprocessing                                    |
 | Lec. 9  | [Memory Management: Addressing](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_09.md) |
 | Lec. 10 | [Memory Management: Methods](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_10.md) |
