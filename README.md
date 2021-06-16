@@ -18,7 +18,7 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 | Lec. 3  | Module Programming and `/proc` Filesystem                    |
 | Lec. 4  | [Process Management](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_04.md) |
 | Lec. 5  | [Process Management: Scheduling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_05.md) |
-| *       | Process Management on Multi-processor System: Scheduling Domain |
+| *       | [Process Management on Multi-processor System: Scheduling Domain](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_00.md#process-management-on-multi-processor-system-scheduling-domain) |
 | Lec. 6  | [Interrupt Handling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_06.md) |
 | Lec. 7  | [Kernel Synchronization](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_07.md) |
 | Lec. 8  | [Symmetric Multiprocessing](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_08.md) |
