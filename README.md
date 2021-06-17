@@ -5,7 +5,7 @@
 
 🧐  *Please let me know in Issues if there exists any problems!*
 
-#### Lab
+## Lab
 
 - [x] 01:  [Module Programming](https://github.com/zhliuworks/Linux-Kernel-notes/tree/master/lab/01_module_programming)
 - [x] 02:  [Process Management](https://github.com/zhliuworks/Linux-Kernel-notes/tree/master/lab/02_process_management)
@@ -13,7 +13,7 @@
 - [x] 04:  [File System](https://github.com/zhliuworks/Linux-Kernel-notes/tree/master/lab/04_file_system)
 - [x] 05:  [Syscall Hijack](https://github.com/zhliuworks/Linux-Kernel-notes/tree/master/lab/05_syscall_hijack)
 
-#### Notes
+## Notes
 
 | Lecture | Content                                                      |
 | ------- | ------------------------------------------------------------ |
@@ -33,6 +33,6 @@
 | *       | [Power Management: From Linux Kernel to Android](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_00.md#power-management-from-linux-kernel-to-android) |
 | *       | [New Directions of Operating System Kernel](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_00.md#new-directions-of-operating-system-kernel) |
 
-#### License
+## License
 
 [GPL-3.0 License](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/LICENSE)
