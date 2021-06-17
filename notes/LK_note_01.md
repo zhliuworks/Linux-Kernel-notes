@@ -60,6 +60,6 @@
 * **Linux 源码树结构**（`/usr/src/linux` 2.6 or earlier）
 <p align="center"><img src="imgs/1/6.png"/></p>
 
-* **[Linux 源代码解析]()**
+* **[Linux 源代码解析](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/pdfs/linux_source.pdf)**
 
-* **[Linux 系统代码解析（安装后）]()**
+* **[Linux 系统代码解析（安装后）](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/pdfs/linux_system_installed.pdf)**
