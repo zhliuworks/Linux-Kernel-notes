@@ -14,7 +14,7 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 | Lecture | Content                                                      |
 | ------- | ------------------------------------------------------------ |
 | Lec. 1  | Introduction to Linux Kernel                                 |
-| Lec. 2  | Linux Booting                                                |
+| Lec. 2  | [Linux Booting](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_02.md) |
 | Lec. 3  | [Module Programming and `/proc` Filesystem](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_03.md) |
 | Lec. 4  | [Process Management](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_04.md) |
 | Lec. 5  | [Process Management: Scheduling](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_05.md) |
