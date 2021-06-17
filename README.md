@@ -1,5 +1,9 @@
 # Linux-Kernel-notes
-Notes and codes for Linux Kernel (SJTU-CS353)
+:electron: Notes and codes for Linux Kernel (SJTU-CS353)
+
+🌟  *Please star this repo if it helps!*
+
+🧐  *Please let me know in Issues if there exists any problems!*
 
 #### Lab
 
@@ -26,6 +30,9 @@ Notes and codes for Linux Kernel (SJTU-CS353)
 | Lec. 10 | [Memory Management: Methods](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_10.md) |
 | Lec. 11 | [Virtual File System](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_11.md) |
 | Lec. 12 | [Linux File System Implementations](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_12.md) |
-| *       | Power Management: From Linux Kernel to Android               |
-| *       | New Directions of Operating System Kernel                    |
+| *       | [Power Management: From Linux Kernel to Android](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_00.md#power-management-from-linux-kernel-to-android) |
+| *       | [New Directions of Operating System Kernel](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/LK_note_00.md#new-directions-of-operating-system-kernel) |
 
+#### License
+
+[GPL-3.0 License](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/LICENSE)
