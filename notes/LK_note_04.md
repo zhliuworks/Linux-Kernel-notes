@@ -61,7 +61,7 @@
     * 根据 esp 寄存器，获取 `thread_info` 结构体的地址
     * 当前正在 CPU 上运行进程的 `task_struct` 指针：`current` 宏
 
-<p align="center"><img src="imgs/4/3.png"/></p>
+<p align="center"><img src="imgs/4/3.png" width="50%"/></p>
 
 * **进程链表（Process List）**
     * `task_struct` 结构中的 `tasks` 字段
@@ -70,6 +70,8 @@
     * `TASK_RUNNING` 状态的进程链表（runqueue）：`run_list` 字段，类型是 `list_head`
     * 为加快调度，Linux 2.6 将 runqueue 切分为 140 个链表，每个优先级 1 个
     * 进程描述符中的 `array` 字段：指向 `prio_array_t` 结构的指针
+
+<p align="center"><img src="imgs/4/7.png" width="50%"/></p>
 
 * **进程间的派生关系**
     * process 0 和 process 1 由内核创建
@@ -89,12 +91,14 @@
         * `SID`（session leader）
     * 使用 Chaining 来处理 PID 冲突
  
+ <p align="center"><img src="imgs/4/5.png" width="50%"/></p>
+ 
  * `task_struct` 中的 `pids` 字段
      * `nr`：PID 的值
      * `pid_chain`：指向哈希链表（Hash chain list）前后元素的指针
      * `pid_list`：指向线程组链表（Thread group list）前后元素的指针
 
-<p align="center"><img src="imgs/4/5.png"/></p>
+<p align="center"><img src="imgs/4/6.png" width="60%"/></p>
 
 ### （4）等待队列（Wait Queue）
 * 处于 `TASK_INTERRUPTABLE` 和 `TASK_UNINTERRUPTABLE` 状态的进程
