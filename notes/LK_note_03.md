@@ -16,7 +16,7 @@
         * `modinfo xxx.ko` 列出模块详细信息
     * 模块加载流程：
 
-<p align="center"><img src="imgs/3/1.png"/></p>
+<p align="center"><img src="imgs/3/1.png" width="60%"/></p>
 
 * 模块编程注意事项
     * 模块中只可以使用 kernel 开放的 API（没有 libc）
