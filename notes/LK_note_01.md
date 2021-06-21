@@ -15,7 +15,7 @@
     * TCP/IP 网络（TCP/IP networking）
     * 开源（open source）
 ### （2）Linux 现状
-<p align="center"><img src="imgs/1/1.png"/></p>
+<p align="center"><img src="imgs/1/1.png" width="40%"/></p>
 
 * **Linux 发行版（Distribution）**
     * **Red Hat 系列**
@@ -24,11 +24,11 @@
         * Debian、Ubuntu 等
         * 特有的 apt-get/dpkg 软件包管理工具
     * ***Huawei OpenEuler***
-<p align="center"><img src="imgs/1/2.png"/></p>
+<p align="center"><img src="imgs/1/2.png" width="80%"/></p>
 
 ### （3）What is Linux Kernel ?
 * **Linux 两种运行模式**：用户态、内核态
-<p align="center"><img src="imgs/1/3.png"/></p>
+<p align="center"><img src="imgs/1/3.png" width="50%"/></p>
 
 * **Linux Kernel 功能**：
     * 执行体、系统监视器
@@ -49,16 +49,16 @@
 
 * **微内核（Microkernel）**：把 OS 分成多个独立的功能模块，模块之间的访问通过消息来完成（HarmonyOS）
 
-<p align="center"><img src="imgs/1/4.png"/></p>
+<p align="center"><img src="imgs/1/4.png" width="40%"/></p>
 
 * **宏内核（Monolithic Kernel）**：把所有的 Kernel 代码编译成一个二进制文件，运行在一个大的内核地址空间中，Kernel 代码可以直接访问和调用，效率高、性能好（**Linux**）
     * Linux Kernel 设计融合了宏内核和微内核的优点：模块化设计、抢占式内核、动态加载的内核模块
 
-<p align="center"><img src="imgs/1/5.png"/></p>
+<p align="center"><img src="imgs/1/5.png" width="40%"/></p>
 
 ### （4）Linux 源码树
 * **Linux 源码树结构**（`/usr/src/linux` 2.6 or earlier）
-<p align="center"><img src="imgs/1/6.png"/></p>
+<p align="center"><img src="imgs/1/6.png" width="50%"/></p>
 
 * **[Linux 源代码解析](https://github.com/zhliuworks/Linux-Kernel-notes/blob/master/notes/pdfs/linux_source.pdf)**
 
