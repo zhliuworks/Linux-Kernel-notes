@@ -22,7 +22,7 @@
             * cs：代码段；ss：堆栈段；ds：数据段；es/fs/gs：通用
     * 偏移量：32-bit
 
-<p align="center"><img src="imgs/9/1.png"/></p>
+<p align="center"><img src="imgs/9/1.png" width="50%"/></p>
 
 * **段描述符（segment descriptor）：8-byte**
     * 存放在 GDT 或 LDT 中
@@ -33,11 +33,11 @@
         * ... ...
     * 段描述符快速访问：80x86 的 6 个可编程段寄存器 -> 不可编程的寄存器作为段描述符缓存：每次加载段选择符时，把相应的段描述符（8 bytes）由内存的 GDT/LDT 加载到不可编程的寄存器中
 
-<p align="center"><img src="imgs/9/2.png"/></p>
+<p align="center"><img src="imgs/9/2.png" width="50%"/></p>
 
 * **逻辑地址 -> 线性地址**
 
-<p align="center"><img src="imgs/9/3.png"/></p>
+<p align="center"><img src="imgs/9/3.png" width="50%"/></p>
 
 * **Linux 段式寻址**
     * Linux 倾向于分页，仅在必要时分段
@@ -76,7 +76,7 @@
             * user/supervisor：特权等级
         * ... ...
 
-<p align="center"><img src="imgs/9/4.png"/></p>
+<p align="center"><img src="imgs/9/4.png" width="50%"/></p>
 
 * **扩展分页**
     * 32-bit = { 页目录 10-bit，偏移量 22-bit }
@@ -94,7 +94,7 @@
 
 * **TLB**：快表，硬件缓存，存储近期访问过的页
 
-<p align="center"><img src="imgs/9/5.png"/></p>
+<p align="center"><img src="imgs/9/5.png" width="40%"/></p>
 
 * **Linux 页式寻址**
     * 5 级分页机制
@@ -105,5 +105,5 @@
         5. 页表（Page Table Entry，**PTE**）
     * 页表处理相关的数据结构：`pgd_t` `pud_t` `pmd_t` `pte_t`
 
-<p align="center"><img src="imgs/9/6.png"/></p>
+<p align="center"><img src="imgs/9/6.png" width="60%"/></p>
 
