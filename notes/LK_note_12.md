@@ -15,7 +15,7 @@
     * **Inode 表**（Inode Table）
     * **数据区盘块**（Data Block）
 * Minix 文件系统的源代码在 0.11 内核的 `linux/fs` 目录下
-* SuperBlock / Inode 数据结构包括：磁盘和内存共有字段（内存超级块由磁盘导入）、内存特有字段
+* SuperBlock / Inode 数据结构包括：磁盘和内存共有字段（内存部分由磁盘导入）、内存特有字段
 * **Inode 的 `i_mode` 字段**
     * 保存文件类型、访问权限属性
     * short 类型，2 B
@@ -37,7 +37,7 @@
 
 * **文件类型和属性：`ls -l`**
 
-<p align="center"><img src="imgs/12/3.png"/></p>
+<p align="center"><img src="imgs/12/3.png" width="80%"/></p>
 
 * **目录项结构（Dentry）**
 ```c
@@ -50,15 +50,15 @@ struct dir_entry {
 }
 ```
 
-<p align="center"><img src="imgs/12/4.png"/></p>
+<p align="center"><img src="imgs/12/4.png" width="80%"/></p>
 
 * **`hexdump` 查看目录项数据块**
     * `hexdump .` 当前目录
 * **Linux 文件系统底层函数** —— 文件系统自身管理（分配 inode/盘块...）
 
-<p align="center"><img src="imgs/12/6.png"/></p>
+<p align="center"><img src="imgs/12/6.png" width="70%"/></p>
 
-<p align="center"><img src="imgs/12/5.png"/></p>
+<p align="center"><img src="imgs/12/5.png" width="70%"/></p>
 
 * **Linux 文件系统数据访问操作**
     * 顶层 —— 文件读写系统调用：`read_write.c`
@@ -68,42 +68,42 @@ struct dir_entry {
         * 字符设备：`char_dev.c`
         * 管道设备：`pipe.c`
 
-<p align="center"><img src="imgs/12/7.png"/></p>
+<p align="center"><img src="imgs/12/7.png" width="70%"/></p>
 
-<p align="center"><img src="imgs/12/8.png"/></p>
+<p align="center"><img src="imgs/12/8.png" width="70%"/></p>
 
 * **文件访问模式 `f_mode`**
 
-<p align="center"><img src="imgs/12/9.png"/></p>
+<p align="center"><img src="imgs/12/9.png" width="70%"/></p>
 
 * **进程打开文件使用的内核数据结构**
 
-<p align="center"><img src="imgs/12/10.png"/></p>
+<p align="center"><img src="imgs/12/10.png" width="70%"/></p>
 
 * **Linux 文件系统上层函数** —— 文件和目录系统调用，面向应用层
 
-<p align="center"><img src="imgs/12/11.png"/></p>
+<p align="center"><img src="imgs/12/11.png" width="70%"/></p>
 
-<p align="center"><img src="imgs/12/12.png"/></p>
+<p align="center"><img src="imgs/12/12.png" width="70%"/></p>
 
 * **高速缓冲区**
     * `Buffer.c` 用于对高速缓冲区进行操作和管理
-    * 缓冲头 `Buffer_head` -> 缓冲块（一个磁盘块大小）
+    * 缓冲头 `buffer_head` -> 缓冲块（一个磁盘块大小）
 
-<p align="center"><img src="imgs/12/13.png"/></p>
+<p align="center"><img src="imgs/12/13.png" width="70%"/></p>
 
-<p align="center"><img src="imgs/12/14.png"/></p>
+<p align="center"><img src="imgs/12/14.png" width="70%"/></p>
 
 * 缓冲头组成的 LRU 双向循环链表（空闲表指针 `b_prev_free/b_next_free`）
 
-<p align="center"><img src="imgs/12/15.png"/></p>
+<p align="center"><img src="imgs/12/15.png" width="70%"/></p>
 
-* 缓冲区 Hash 队列（Hash 表项指针 `b_prev/b_next`）
+* 缓冲头 Hash 队列（Hash 表项指针 `b_prev/b_next`）
 
-<p align="center"><img src="imgs/12/16.png"/></p>
+<p align="center"><img src="imgs/12/16.png" width="70%"/></p>
 
 * 块设备访问操作
-<p align="center"><img src="imgs/12/17.png"/></p>
+<p align="center"><img src="imgs/12/17.png" width="70%"/></p>
 
 * **Ext2 文件系统**
-<p align="center"><img src="imgs/12/18.png"/></p>
+<p align="center"><img src="imgs/12/18.png" width="50%"/></p>
