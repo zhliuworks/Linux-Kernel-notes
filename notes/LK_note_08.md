@@ -14,7 +14,7 @@
     * 由同一个操作系统控制，系统平等对待所有处理器
     * 当前多处理器系统大多使用 SMP 架构。多核处理器的核也可以视为不同处理器，从而构成 SMP 架构
 
-<p align="center"><img src="imgs/8/2.png"/></p>
+<p align="center"><img src="imgs/8/2.png" width="50%"/></p>
 
 * **NUMA（Non-uniform Memory Access，非一致内存访问）**
     * 一种多处理器系统使用的内存设计
@@ -23,7 +23,7 @@
         * 非本地内存：连接在其它处理器上的内存节点
     * NUMA 优势在于存取具有本地化特征的数据
 
-<p align="center"><img src="imgs/8/3.png"/></p>
+<p align="center"><img src="imgs/8/3.png" width="40%"/></p>
 
 * SMP 的特征
     * 允许 Linux 内核不同部分在不同处理器上并发运行
@@ -39,23 +39,23 @@
 ### （2）SMP 进程调度
 * **时分共享**
 
-<p align="center"><img src="imgs/8/4.png"/></p>
+<p align="center"><img src="imgs/8/4.png" width="50%"/></p>
 
 * **空分共享**
 
-<p align="center"><img src="imgs/8/5.png"/></p>
+<p align="center"><img src="imgs/8/5.png" width="50%"/></p>
 
 ### （3）SMP 同步问题
 * 同步难题 —— TSL 指令（Test and Set Lock）
     * 在 SMP 系统中，如果仅对内存区域加锁，不同处理器的 TSL 指令会出现同时对一块内存区域加锁的情况
     * 考虑对总线加锁，一个处理器对总线加锁后，另一个处理器执行 TSL 指令失败（无法读总线）
 
-<p align="center"><img src="imgs/8/6.png"/></p>
+<p align="center"><img src="imgs/8/6.png" width="50%"/></p>
 
 * 同步难题 —— 缓存颠簸（Cache Thrashing）
     * 使用多个锁避免缓存颠簸
 
-<p align="center"><img src="imgs/8/7.png"/></p>
+<p align="center"><img src="imgs/8/7.png" width="50%"/></p>
 
 ### （4）SMP 源码分析
 #### 【1】SMP：Linux 启动过程
@@ -65,7 +65,7 @@
     * ***APIC***（Advanced Programmable Interrupt Controller，高级可编程中断控制器）：分为 Local APIC 和 I/O APIC
     * ***IPI***（Inter-Processor Interrupt，处理器间中断）：用于处理器之间的通信
 
-* 由于 BIOS 代码不支持多线程，所以 SMP 中必须让所有 AP 进入中断屏蔽状态，不与 BSP 一起执行 BIOS 代码。BIOS 程序将其它 AP 置于中断屏蔽状态，只选择 BSP 执行 BIOS代码中的后继部分
+* 由于 BIOS 代码不支持多线程，所以 SMP 中必须让所有 AP 进入中断屏蔽状态，不与 BSP 一起执行 BIOS 代码。BIOS 程序将其它 AP 置于中断屏蔽状态，只选择 BSP 执行 BIOS 代码中的后继部分
 
 * 主要流程
     * BIOS 初始化（屏蔽 AP，建立系统配置表格）
@@ -103,6 +103,6 @@ struct task_struct {
 
 #### 【3】SMP：Linux 中断系统
 
-<p align="center"><img src="imgs/8/8.png"/></p>
+<p align="center"><img src="imgs/8/8.png" width="50%"/></p>
 
 * **【总结】为支持 SMP，在硬件上需要 APIC，Linux 定义了各种 IPI 的中断向量以及传送 IPI 的函数**
