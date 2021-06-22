@@ -6,6 +6,7 @@
 ### （1）页框管理
 * 标准页框大小：4 KB
 * **页描述符 `page`**：32 B，存储在 `mem_map` 数组中
+
 * **NUMA（非一致内存访问）**
     * Physical Memory : Node : Zone : Page
     * 物理内存被切分为多个节点（Nodes），每个节点有：
@@ -21,9 +22,11 @@
             * `struct list_head active/inactive_list;` *List of active/inactive pages in the zone*
     * 三种管理区
         * `ZONE_DMA`、`ZONE_NORMAL`、`ZONE_HIGHMEM`
+
 * **保留页框池（Pool of Reserved Page Frames）**
     * 有些内核控制路径在请求内存时不允许被阻塞 —— 原子分配请求
     * 内核保留了部分页框，供原子内存分配请求使用 —— 保留页框池
+
 * **分区页框分配器（Zoned Page Frame Allocator）**
     * 注：保留页框池是留给内核自己使用的，分页页框分配器不是
     * 请求页框 `alloc_pages`，释放页框 `free_pages`
@@ -40,7 +43,7 @@
             * 如果 `count < low`，kernel 从伙伴系统中申请 `batch` 个单独的页框（4 KB）来补充对应的高速缓存
             * 如果 `count > high`，kernel 从缓存中释放 `batch` 个页框回到伙伴系统
 
-<p align="center"><img src="imgs/10/1.png"/></p>
+<p align="center"><img src="imgs/10/1.png" width="50%"/></p>
 
 * **伙伴系统**
     * 避免外碎片的方法：
@@ -51,38 +54,38 @@
         * 保持内核页表不变的优势
         * 内核可以通过使用 4 MB 的页来访问大块连续物理内存
     * **伙伴系统（Buddy System）**
-        * 11 个内存块链表，大小为 2^0^ - 2^10^ 个连续页框的内存块
+        * 11 个内存页块链表，大小为 2^0 - 2^10 个连续页框的内存页块
         * Linux 2.6 使用 3 个伙伴系统，分别管理：DMA 页框、普通页框、高内存区页框
-        * 分配一块内存：比如需要分配 13 个页框，需要用掉 2^4^=16 个页框的内存块，然后归还 2^0^=1 和 2^1^=2 的内存块各一个，挂到相应链表上
-        * 释放一块内存：尽量合并成大的内存块（伙伴内存块之间合并）
-            * 伙伴内存块：内存块大小一致、物理地址连续
+        * **分配一块内存**：比如需要分配一块具有 13 个页框的连续内存，需要用掉一个具有 2^4=16 个页框的内存页块，然后归还 2^0=1 和 2^1=2 的内存页块各一个，挂到相应链表上
+        * **释放一块内存**：尽量合并成大的内存页块（伙伴内存块之间合并）
+            * 伙伴内存块：内存页块大小一致、物理地址连续
             * 如下图中的 P0 和 P1 为伙伴内存块，如果 P1、C1、B1 空闲，释放 P0 ，即可逐级合并直到释放 A0
 
-<p align="center"><img src="imgs/10/2.png"/></p>
+<p align="center"><img src="imgs/10/2.png" width="40%"/></p>
 
 * **伙伴系统（续）**
     * 伙伴系统的数据结构
         * 管理区描述符 `zone` 中的 `struct free_area free_area[11];` 字段
-        * `free_area[k]` 管理所有大小为 2^k^ 个页框的空闲内存块
-        * `free_area[k]->free_list` 字段，是一个双向循环链表的头指针，管理所有大小为 2^k^ 个页框的空闲内存块的页描述符
+        * `free_area[k]` 管理所有大小为 2^k 个页框的空闲内存页块
+        * `free_area[k]->free_list` 字段，是一个双向循环链表的头指针，管理所有大小为 2^k 个页框的空闲内存页块的页描述符
     * 仍然存在外碎片化
 
-<p align="center"><img src="imgs/10/3.png"/></p>
+<p align="center"><img src="imgs/10/3.png" width="50%"/></p>
 
 * **伙伴系统（续）**
     * 碎片化解决方案：迁移类型
-        * 迁移类型按照页块（PageBlock）划分，一个页块正好是页面分配器最大的分配大小，即 2^10^=1 K 个页框，即 4 MB
+        * 迁移类型按照伙伴系统的最大分配大小进行划分，即 2^10=1 K 个页框，即 4 MB
         * 三种类型：
             * 不可移动类型（UNMOVABLE）：在内存中有固定位置，不能移动到其它地方
             * 可移动类型（MOVABLE）：可以随意移动的页面
             * 可回收类型（RECLAIMABLE）：不能直接移动，但是可以回收
         * 不可移动页面不允许在可移动页面中申请，避免导致碎片
 
-<p align="center"><img src="imgs/10/4.png"/></p>
+<p align="center"><img src="imgs/10/4.png" width="60%"/></p>
 
 ### （2）内存区管理
 
-<p align="center"><img src="imgs/10/5.png"/></p>
+<p align="center"><img src="imgs/10/5.png" width="50%"/></p>
 
 * Buddy System 分配的连续页框，可能不能全部用完，导致内碎片（小的 Object，比如进程描述符、各种锁等）
 * Linux 引入 Slab 分配器，以避免内碎片
@@ -95,9 +98,9 @@
     * 每个 cache 存储同种类型的 object，划分为多个 slab
     * 每个 slab 由一个或多个连续页框组成，包括 allocated objects 和 free objects
 
-<p align="center"><img src="imgs/10/6.png"/></p>
+<p align="center"><img src="imgs/10/6.png" width="50%"/></p>
 
-<p align="center"><img src="imgs/10/7.png"/></p>
+<p align="center"><img src="imgs/10/7.png" width="70%"/></p>
 
 * **Slab 分配器（续）**
     * **cache 描述符**类型 `kmem_cache_t`
@@ -113,7 +116,7 @@
         * `unsigned int free;` slab 中下一个 free object 的索引，如果没有则为 `BUFCTL_END` 
     * **object 描述符**类型 `kmem_bufctl_t`
 
-<p align="center"><img src="imgs/10/8.png"/></p>
+<p align="center"><img src="imgs/10/8.png" width="60%"/></p>
 
 * **Slab 分配器（续）**
     * **通用 cache & 专用 cache**
@@ -146,9 +149,9 @@
         * allocated object 描述符 -> allocated object 属性
         * free object 描述符 -> 下一个 free object 的 index，这样实现了 slab 内部 free object 的一个队列
 
-<p align="center"><img src="imgs/10/9.png"/></p>
+<p align="center"><img src="imgs/10/9.png" width="50%"/></p>
 
-<p align="center"><img src="imgs/10/10.png"/></p>
+<p align="center"><img src="imgs/10/10.png" width="50%"/></p>
 
 * **Slab 分配器（续）**
     * object 分配 & 释放
@@ -201,7 +204,7 @@
         * 引用位 = 1，引用位 <- 0，跳过该页面
     * 如果所有页面引用位均为 1，指针绕循环队列一圈，将所有引用位设置为 0，指针重新回到起始位置，换出这一页，再推进一步
 
-<p align="center"><img src="imgs/10/11.png"/></p>
+<p align="center"><img src="imgs/10/11.png" width="80%"/></p>
 
 * **改进的 Clock 算法**
     * 页表中：引用位（r），修改位（m），换出次序
@@ -219,24 +222,11 @@
     * 被访问页面调整至相应 LRU 队列队尾，K 次访问后从短期队列移至长期队列队尾，首次访问页面放在短期队列队尾
     * 首先考虑淘汰短期队列队头页面，如果短期队列为空，再考虑淘汰长期队列队头页面
 
-<p align="center"><img src="imgs/10/12.png"/></p>
+<p align="center"><img src="imgs/10/12.png" width="50%"/></p>
 
 * **2Q 算法**
     * 维护两个队列：FIFO 队列、LRU 队列
     * 被访问页面如果在 LRU 队列则调整至 LRU 队列队尾，两次访问后从 FIFO 队列移至 LRU 队列
     * 首先考虑淘汰 FIFO 队列队头页面，如果 FIFO 队列为空，再考虑淘汰 LRU 队列队头页面
 
-<p align="center"><img src="imgs/10/13.png"/></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p align="center"><img src="imgs/10/13.png" width="50%"/></p>
